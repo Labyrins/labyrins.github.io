@@ -1,294 +1,69 @@
-# HMFAYSAL OMEGA THEME
+# Holo Alfa Jekyll theme [![Build Status](https://travis-ci.org/steinvc/holo-alfa.svg?branch=master)](https://travis-ci.org/steinvc/holo-alfa) #
 
-Project name:	HMFAYSAL OMEGA THEME  
-Author:	Hossain Mohd Faysal  
-Project type:	The Coolest Theme for Jekyll 
-License:	MIT License 
-  
-HMFAYSAL OMEGA is a minimalist, beautiful, responsive theme for Jekyll designed for engineers as well as writers who want their content to take front and center. This theme elegantly wraps each page and post with featured images complementing the content. It was built -- by Engineer slash Mathematician [Hossain Mohd Faysal](http://alum.mit.edu/www/hmfaysal/).
+![Screenshot](http://i.imgur.com/Gi46aag.jpg)
 
-The theme features:
+Holo Alfa is a minimalist, mobile first Jekyll theme with focus on readability and content. Created for free and fun by Stijn.
 
-* Twitter Bootstrap 3
-* Option to set featured image that wraps your post in header and footer
-* Custom Javascript to emphasize the first paragraph `p:first-child` of your post
-* Variable templates for articles, quotation, video, photo and status updates (post types)
-* Display Equations via Native MathJax Support
-* Plugin-free/Github Pages Deployment Ready
-* Read time Calculator: Calculation of post read-time based on word count (Via Liquid Tags instead of a plugin)
-* Complex pagination script if you decide to turn pagination on
-* CSS3 transitions for better performance 
-* Ability to turn of animations in _config.yml
-* Readable typography to make your words shine
-* Disqus comments if you choose to enable
-* Simple and clear permalink structure
-* Footer Menu
-* SVG graphics
-* Google Fonts
-* 361 Fontawesome icons
-* Tags for [Open Graph](https://developers.facebook.com/docs/opengraph/) and [Twitter Cards](https://dev.twitter.com/docs/cards) for a better social sharing experience
-* Beautifully crafted [404 page](http://hmfaysal.github.io/hmfaysal-omega-theme/404.html)
-* Custom [categories](http://hmfaysal.github.io/hmfaysal-omega-theme/categories/) and [tags](http://hmfaysal.github.io/hmfaysal-omega-theme/tags/) pages for viewers pleasure
-* Stylesheets for Pygments and Coderay to make your code examples look snazzy
-* Simple search that overlays results based on post title
-* Sitemap for search engines
-* Designed by an Electrical Engineer
+See it in action: http://steinvc.github.io/holo-alfa/.
 
-For a full list of features, visit [this link](http://hmfaysal.github.io/hmfaysal-omega-theme/theme-setup/about-hmfaysal-omega/)
+## Feature highlights ##
 
-![screenshot of HMFAYSAL OMEGA Theme](https://raw.github.com/hmfaysal/hmfaysal-omega-theme/gh-pages/images/hmfaysal-omega-preview.jpg)
+* Mobile first design
+* Extensive content styling
+* Responsive video's (using [FitVids.JS](http://fitvidsjs.com/))
+* Support for authors and guest authors
+* Read time on articles
+* Disqus comments
+* Automatic [og metadata](http://ogp.me/)
+* Automatic archive page (without plugins)
+* Automatic sitemap en RSS feed
+* Contact page (with working email form)
+* A lot of (optional) customization options (all in `_config.yml`)
 
-## Basic Setup for a new Jekyll site
+And much more.
 
-1. [Install Jekyll](http://jekyllrb.com) and read through [this installation instructions](http://hmfaysal.github.io/hmfaysal-omega-theme/theme-setup/installing-jekyll-on-windows/) if you haven't already.
-2. Fork the [HMFAYSAL OMEGA Theme](https://github.com/hmfaysal/hmfaysal-omega-theme/fork)
-3. Clone the repo you just forked.
-4. Edit `_config.yml` to personalize your site.
-5. Check out the sample posts in `_posts` to see examples for pulling in large feature images, assigning categories and tags, and other YAML data.
-6. Read the documentation below for further customization pointers and documentation.
+## Getting started ##
 
+If you're new to Jekyll, check out http://jekyllrb.com/ and read up on Jekyll. It's worth it.
 
-**Pro-tip:** Delete the `gh-pages` branch after cloning and start fresh by branching off `master`. There is a bunch of garbage in `gh-pages` used for the theme's demo site that I'm guessing you don't want on your site.
+* [Another great resource to learn about Jekyll](http://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/)
+* [Github's guide to using Jekyll with Pages](https://help.github.com/articles/using-jekyll-with-pages/)
 
----
+If you run one of the latest versions of Jekyll, this theme will work with no* problems.
 
-## Setup for an Existing Jekyll site
+### Installing ##
 
-1. Clone the following folders: `_includes`, `_layouts`, `_pages`, `assets`, and `images`.
-2. Set the following default variables in your `_config.yml` file:
+As simple as forking the repository, and then clone it so you can edit the files locally.
 
-``` yaml
-title:            Site Title
-description:      Site description for the metas.
-logo:             omikron.png
-disqus_shortname: shortname
-# Assign a default image for your site's header and footer
-default_bg:       default_bg.jpg
-search:           true
-share:            true
-# Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
-readtime:         true
-# Turn on or off the fin animations in the header and footer
-triangleheader:	  true
-animated_fins:    true
-# Specify the fin color in RGB value
-fin_color:        "255,255,255"
-# Change url to your domain. Leave localhost server or blank when working locally.
-url:              http://localhost:4000
-# baseurl:           
+### Configuration ###
 
-# Gems used
-gems:
-  - jekyll-feed
-  - jekyll-archives
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-seo-tag
+Edit `_config.yml`!
 
-# Archives configuration
-# https://github.com/jekyll/jekyll-archives/blob/master/docs/configuration.md
-jekyll-archives:
-  enabled:
-    - categories
-    - tags
-  layout: 'archive'
-  permalinks:
-    # year: '/:year/'
-    # month: '/:year/:month/'
-    # day: '/:year/:month/:day/'
-    tag: '/archive/tag/:name/'
-    category: '/archive/category/:name/'
+You can find `_config.yml` in your site's root directory. This configuration file contains some necessary settings and some optional customization settings. **All settings are explained in `_config.yml` itself.**
 
-# Owner/author information
-author:
-  name:           Your Name
-  picture:        your-photo.jpg
-  email:          your@email.com
-  # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    Some Details about yourself
-  # Social networking links used in footer. Update and remove as you like.
-  twitter:
-  facebook:
-  github:
-  linkedin:
-  instagram:
-  tumblr:
-  # For Google Authorship https://plus.google.com/authorship
-  google_plus:    "http://plus.google.com/123123123123132123"
+There are some customizations that can't be done in `_config.yml`. These include:
 
-# Analytics and webmaster tools stuff goes here
-google_analytics:
-google_verify:
+* Editing the About, Contact and Archive page.
+* Adding or removing pages from the navigation. This can be done in `\_includes\navigation.html`.
+* The "thanks" page after a message has been send through the contact page: `thanks.md`
+* The gradient on cover images: `\_includes\gradient.css` (this is explained in `_config.yml`).
 
-# Links to include in top navigation
-# For external links add external: true
-links:
-  - title: Home
-    url: /
-    external: false
-    icon: home
-  - title: Categories
-    url: /categories
-  - title: Tags
-    url: /tags
+Also make sure to replace the placeholder favicons and the `\img\og-image.jpg` with your own.
 
-# Sitemap configuration
-# https://github.com/kinnetica/jekyll-plugins
-sitemap:
-    file: "/sitemap.xml"
-    exclude:
-        - "/atom.xml"
-        - "/feed.xml"
-        - "/feed/index.xml"
-    include_posts:
-        - "/index.html"
+### Start the Jekyll server ###
 
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
-future:      true
-markdown:    kramdown
-highlighter: rouge
-paginate:    6
-paginate_path: "/blog/:num/"
+Run this command at the root of your site:
 
-# https://github.com/mojombo/jekyll/wiki/Permalinks
-collections:
-  posts:
-    output: true
-    permalink: /blog/:title
-  pages:
-    output: true
-    permalink: /:title
-
-kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
+```
+$ jekyll serve
 ```
 
----
+> To run Jekyll in a way that matches the GitHub Pages build server, run Jekyll with Bundler. Use the command `bundle exec jekyll serve`.
 
-## Post Front Matter YAML
+When everything is OK, your site should now be available at `http://localhost:4000`.
 
-HMFAYSAL OMEGA uses variable post templates for articles, quotation, video, photo and status updates. 
-
-A new blog post should have the following structure to utilise the themes functions
-
-``` yaml
----
-layout: post
-title: "Some Title"					# Title of the post
-description: Some description		# Description of the post, used for Facebook Opengraph & Twitter
-headline: Some headline				# Will appear in bold letters on top of the post
-modified: YYYY-MM-DD				# Date
-category: personal
-tags: []
-image: 
-  feature: some-image.jpg
-comments: true
-mathjax:
----
-```
-
-A new status should have the following structure to utilise the themes functions
-
-``` yaml
----
-layout: post
-type: status                # ! Important
-title: "Some Title"         # Title of the post
-description: Some description   # Description of the post, used for Facebook Opengraph & Twitter
-headline: Some headline       # Will appear in bold letters on top of the post
-modified: YYYY-MM-DD        # Date
-category: personal
-tags: []
-image: 
-  feature: some-image.jpg
-comments: true
-mathjax:
----
-```
-
-A new quotation post should have the following structure to utilise the themes functions
-
-``` yaml
----
-layout: post
-type:  quote                # ! Important
-title: "Some Title"         # Title of the post
-description: Some description   # Description of the post, used for Facebook Opengraph & Twitter
-headline: Some headline       # Will appear in bold letters on top of the post
-modified: YYYY-MM-DD        # Date
-category: personal
-tags: []
-image: 
-  feature: some-image.jpg
-comments: true
-mathjax:
----
-```
-
-A new video post should have the following structure to utilise the themes functions
-
-``` yaml
----
-layout: post
-type:  video                # ! Important
-title: "Some Title"         # Title of the post
-description: Some description   # Description of the post, used for Facebook Opengraph & Twitter
-headline: Some headline       # Will appear in bold letters on top of the post
-modified: YYYY-MM-DD        # Date
-category: personal
-tags: []
-image: 
-  feature: some-image.jpg
-comments: true
-mathjax:
----
-```
-
-A new photo post should have the following structure to utilise the themes functions. By default, the featured image is shown on the blog index, but if you want to display another photo, you can choose to do so :)
-
-``` yaml
----
-layout: post
-type:  photo                # ! Important
-photo: some-image.jpg 		# In case you do not want the featured image to display on the front page
-title: "Some Title"         # Title of the post
-description: Some description   # Description of the post, used for Facebook Opengraph & Twitter
-headline: Some headline       # Will appear in bold letters on top of the post
-modified: YYYY-MM-DD        # Date
-category: personal
-tags: []
-image: 
-  feature: some-image2.jpg
-comments: true
-mathjax:
----
-```
+That's it.
 
 ---
 
-## Questions?
-
-Having a problem getting something to work or want to know why I setup something in a certain way? Ping me on Twitter [@hmfaysal](http://twitter.com/hmfaysal) or [file a GitHub Issue](https://github.com/hmfaysal/hmfaysal-omega-theme/issues/new).
-
----
-
-## Requests?
-
-If you have some specific requests for this theme, or if you need help custom coding some elements, message me on Twitter [@hmfaysal](http://twitter.com/hmfaysal) or email me at [hmfaysal@alum.mit.edu](mailto:hmfaysal@alum.mit.edu)
-
----
-
-## License
-
-This theme is free and open source software, distributed under the [The MIT License](LICENSE). So feel free to use this Jekyll theme on your site without linking back to me or using a disclaimer.
-
-If you'd like to give me credit somewhere on your blog or tweet a shout out to [@hmfaysal](https://twitter.com/hmfaysal), that would be pretty sweet.
-
-
-Warm Regards and Stay Creative,  
-Hossain Mohd. Faysal
+[MIT license](http://opensource.org/licenses/MIT)
