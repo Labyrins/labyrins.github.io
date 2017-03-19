@@ -32,6 +32,8 @@ html, body {
   height: 100%;
 }
 p, form {
+  font-family: 'Nanum Gothic', serif;
+  font-size:20px;
   line-height: 1.4;
   margin: 30px auto;
   word-wrap: break-word;
@@ -345,6 +347,10 @@ footer .inner {
   margin: 0 auto;
   padding: 0 15px;
   max-width: 740px;
+}
+.footer-text {
+  font-family: 'Jeju Gothic', serif;
+  font-size: 16px;
 }
 
 

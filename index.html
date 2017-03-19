@@ -25,7 +25,7 @@ home: true
           {% endif %}
         {% endif %}
       {% endif %}
-      {{ post.date | date: site.date_format }} • {{ read-time }}</span>
+      {{ post.date | date: site.date_format }}</span>
   	<a href="{{ post.url | prepend: site.baseurl }}"><h1>{{ post.title }}</h1></a>
       <p>
       {% if post.summary %}
