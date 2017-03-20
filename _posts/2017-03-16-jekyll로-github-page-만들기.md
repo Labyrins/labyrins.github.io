@@ -38,7 +38,7 @@ nav a.current {
 ![Forest]({{ site.baseurl }}/img/howtoyoutubeimport.png)
 ```
 
-#### 인용문의 삽입
+#### 인용문 삽입
 사용하려는 인용문을 `>`로 감싸 표기합니다. 이미지의 삽입과 마찬가지고 인용절 뒤에 `<small></small>`을 통해 출처 등을 남길 수 있습니다.
 
 >It'll be nipper heaps trent from punchy oldies. Trent from punchy no dramas when flat out like a tucker-bag. He hasn't got a piker flamin frog in a sock.
