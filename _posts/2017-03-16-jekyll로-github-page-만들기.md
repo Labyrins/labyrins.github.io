@@ -11,6 +11,89 @@ Markdown문서로 문서를 작성하고, 이를 자동으로 정적인 페이�
 
 Jekyll은 전세계 개발자들이 미리 만들어 놓은 좋은 테마를 무료(또는 유료?)로 사용이 가능합니다. [themes.jekyllrc.org](http://themes.jekyllrc.org/), [jekyllthemes.org](http://jekyllthemes.org/) 등을 통하여 본인의 취향에 맞는 테마를 선택하도록 합시다. 글쓴이는 [holo-alfa](http://steinvc.github.io/holo-alfa/)라는 단순하고 깔끔한 테마를 선택하여 진행을 하였습니다. `fork`를 떠서 본인의 repository에 옮긴뒤 약간의 커스터마이징을 가미하도록 합시다.
 
+#### _config.yml
+Jekyll내의 모든 설정은 `_config.yml`을 통해서 관리합니다. 선택한 테마에서 데모를 위해 설정되어 있는 내용을 이 블로그를 위해 수정을 하도록 합시다.
+
+{% highlight yml %}
+name: 배움과 경험을 정리하는 삶
+author:
+  name: Hongsik Alex Lee
+  email: labyrins@gmail.com
+url: http://labyrins.github.io
+baseurl: ""
+
+# Footer에 넣을 소셜아이콘들을 위해 설정
+facebook: "https://www.facebook.com/hongsik.lee"
+github: "https://github.com/Labyrins"
+{% endhighlight %}
+
+#### CSS/Font 추가
+영문으로 쓴다면 테마에서 지정한 font로도 큰 문제가 없지만 한글로 작성할 블로그이니 font를 추가하고, 소셜 아이콘으로 쓸 이미지가 담긴 font-awesome을 추가한뒤 `style.css`를 수정하여 적용합니다.
+
+{% highlight html %}
+<!--header.html-->
+<link rel="stylesheet" href="{{ "{{ site.baseurl "}}}}/css/font-awesome.css"><!- []를 {}로 변경해야함 ->
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/jejugothic.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+{% endhighlight %}
+
+{% highlight css %}
+/* style.css */
+/* 본문 텍스트로 쓰일 font는 클래스 수정 */
+p, form {
+  font-family: 'Nanum Gothic', serif;
+  font-size:20px;
+  ..
+}
+
+/* footer용 font로 쓰일 클래스는 신규추가 */
+.footer-text {
+  font-family: 'Jeju Gothic', serif;
+  font-size: 16px;
+}
+{% endhighlight %}
+
+#### Footer
+링크를 위한 소셜아이콘의 추가와 간단한 문구가 담긴 Footer를 위해 `footer.html`를 아래와 같이 수정합니다.
+
+{% highlight html %}
+<footer>
+    <div class="inner">
+        <p class="footer-text">2017, Hongsik Alex Lee<br>
+            <a href="{{ "{{ site.facebook "}}}}">
+                <span class="fa-stack fa-sm">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+            <a href="{{ "{{ site.github "}}}}">
+                <span class="fa-stack fa-sm">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </p>
+    </div>
+</footer>
+{% endhighlight %}
+
+#### jekyll의 빌드와 구동 그리고 draft모드
+포스트의 작성은 `_posts` 디렉토리에 `YYYY-MM-DD-Title.md`형식의 이름을 가진 markdown 파일을 작성함으로써 이루어집니다. 해당 파일이 `_posts`로 들어오면 Jekyll에 의해 정적인 웹페이지로 변환되며, 이는 `_site`에 날짜별 디렉토리로 작성되어 있음을 확인할 수 있습니다. 우선, 우리가 선택한 테마에는 템플릿용으로 `_posts`에 md파일이 있으니 삭제하고 빌드를 해줍니다.
+
+```
+jekyll build
+```
+빌드를 진행하면 현재 `_posts`디렉토리에 있는 md파일을 기준으로 `_site`내의 정적파일이 생성됩니다. 이제 Jekyll을 구동하여 작성한 페이지를 확인하도록 합시다. 기동이 완료되면 `localhost:4000`을 통해 확인가능합니다.
+
+```
+jekyll serve
+```
+한번에 글을 작성하기 어려운 분들을 위한 Draft모드도 있습니다. 프로젝트 루트에 `_drafts`를 생성한뒤 임의의 md파일을 넣고 draft모드로 서버를 구동하면 `_draft`내의 md파일이 현재의 날짜로 세팅이 되어 페이지를 통해 확인이 가능할 수 있습니다. Draft모드로의 서버구동은 아래와 같습니다.
+
+```
+jekyll serve --drafts
+```
+
 ---
 이로써 정적인 포스트를 작성하기 위한 모든 작업을 마쳤습니다. Jekyll에서의 포스트 작성은 기본적으로 Markdown의 문법을 사용하지만 Liquid를 사용한 확장표현이 가능합니다. 아래에는 Markdown의 기본문법을 벗어난 좀더 다양한 방법을 통한 사용예제를 소개합니다.
 
@@ -35,7 +118,7 @@ nav a.current {
 모든 이미지는 `img`디렉토리에서 관리합니다. 여타의 Markdown문법과 같이 사용하고, URL선언을 현재 프로젝트 내의 파일로 지정하면 손쉽게 이미지를 삽입할 수 있습니다. `site.baseurl`은 `_config.yml`에 선언되어 있음을 확인합시다. 출처를 명시할 때는 `<small></small>`를 사용합니다.
 
 ```
-![Forest]({{ site.baseurl }}/img/howtoyoutubeimport.png)
+![Forest]({{ "{{ site.baseurl "}}}}/img/howtoyoutubeimport.png)
 ```
 
 #### 인용문 삽입
@@ -70,4 +153,4 @@ Table의 삽입은 [Github-Flavored-Markdown](https://help.github.com/articles/g
 | zebra stripes | are neat        |    $1 |
 
 
-이로써 페이지의 Jekyll - Github Page를 통한 블로그 준비와 포스트 작성에 관한 모든 것이 정리 되었습니다. 이제 지식을 쌓기만 하면 됩니다. 강철의 근성이 공부를 하는 여러분들에게 가호를 내리기 바라며..
+이로써 페이지의 Jekyll - Github Page를 통한 블로그 준비와 포스트 작성에 관한 모든 것이 정리 되었습니다. Tag기능과 SEO를 위한 설정은 추후에 세팅을 하도록 하고 이제부터는 지식을 쌓기만 하면 됩니다. 강철의 근성이 공부를 하는 여러분들에게 가호를 내리기 바라며..
