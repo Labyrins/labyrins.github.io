@@ -51,3 +51,23 @@ Youtube영상을 삽입하기 위한 [FitVids.js](http://fitvidsjs.com/)가 추�
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/i1n_1jrUEjU" frameborder="0" allowfullscreen></iframe>
 
+#### Tables 삽입
+
+Table의 삽입은 [Github-Flavored-Markdown](https://help.github.com/articles/github-flavored-markdown/#tables)에 기반한 Markdown문법을 사용합니다. 자세한 문법은 위의 링크를 참고바랍니다.
+
+```
+| Left-Aligned  | Center Aligned  | Right Aligned |
+| :------------ |:---------------:| -----:|
+| col 3 is      | some wordy text | $1600 |
+| col 2 is      | centered        |   $12 |
+| zebra stripes | are neat        |    $1 |
+```
+
+| Left-Aligned  | Center Aligned  | Right Aligned |
+| :------------ |:---------------:| -----:|
+| col 3 is      | some wordy text | $1600 |
+| col 2 is      | centered        |   $12 |
+| zebra stripes | are neat        |    $1 |
+
+
+이로써 페이지의 Jekyll - Github Page를 통한 블로그 준비와 포스트 작성에 관한 모든 것이 정리 되었습니다. 이제 지식을 쌓기만 하면 됩니다. 강철의 근성이 공부를 하는 여러분들에게 가호를 내리기 바라며..
