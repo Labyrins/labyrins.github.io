@@ -2,7 +2,6 @@
 title: jekyll로 Github Page 만들기
 cover-image: hipster.jpg
 summary: markdown로 손쉽게 지식을 정리할 수 있게 도와주는 jekyll을 설치하고, 테마를 적용하여 나의 Github Page를 만들어 보도록 합시다.
-
 ---
 
 Markdown문서로 문서를 작성하고, 이를 자동으로 정적인 페이지로 변환시켜주는 [Jekyll](https://jekyllrb-ko.github.io/)을 사용하여 손쉬운 블로그를 만들어 보도록 합시다. 이에 Gitbub Page는 Jekyll을 통해 서비스가 가능한 최고의 선택이 됩니다. Jekyll과 Github Page의 조합은 많은이들에게 사용된지 상당히 오래되었으므로, 본 포스팅에서는 현재의 페이지가 어떤 과정으로 생성되었는지에 대한 과정을 서술합니다.
@@ -32,7 +31,7 @@ github: "https://github.com/Labyrins"
 
 {% highlight html %}
 <!--header.html-->
-<link rel="stylesheet" href="{{ "{{ site.baseurl "}}}}/css/font-awesome.css"><!- []를 {}로 변경해야함 ->
+<link rel="stylesheet" href="{{ "{{ site.baseurl "}}}}/css/font-awesome.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/jejugothic.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
 {% endhighlight %}
