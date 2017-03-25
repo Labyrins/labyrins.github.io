@@ -178,7 +178,7 @@ code {
   font-family: "Source Code Pro", monospace;
 }
 p code {
-  font-size: .7em;
+  font-size: 1.0em;
   display: inline-block;
   border-radius: 2px;
   background-color: rgba({{ site.text-color }},.05);
