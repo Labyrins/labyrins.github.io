@@ -450,10 +450,10 @@ nav a.current {
     margin-bottom: -10px;
   }
   .img-only {
-    margin: 0 -30px;
+    margin: 0 0px;
   }
   .img-only-source {
-    margin: 0 -30px;
+    margin: 0 0px;
   }
   blockquote {
     padding: 0 30px;
